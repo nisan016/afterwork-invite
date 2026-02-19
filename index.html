@@ -108,7 +108,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            p: 20px;
+            gap: 20px;
             min-height: 80px;
             position: relative;
         }
@@ -257,6 +257,26 @@
             transform: scale(1.05);
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
         }
+
+        .powered-by {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 9999;
+            font-style: italic;
+        }
+
+        .powered-by a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .powered-by a:hover {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -288,6 +308,11 @@
         </div>
     </div>
 
+    <!-- Powered by Claude footer -->
+    <div class="powered-by">
+        Powered by <a href="https://claude.ai" target="_blank">Claude</a> ✨
+    </div>
+
     <script>
         const noBtn = document.getElementById('noBtn');
         const yesBtn = document.getElementById('yesBtn');
@@ -300,10 +325,10 @@
         let attempts = 0;
         const noTexts = [
             'Nej',
-            'Nice try...',
-            'Knappen är bara för dekoration 😈',
-            'Oj... den smiter!',
-            'Tänk om!',
+            'Är du säker?',
+            'Knappen är bara för dekoration 😈'',
+            'Verkligen?',
+            'Men... ',
             'Snälla?',
             'Sista chansen!',
             'Säker säker?',
@@ -437,7 +462,7 @@
             // Show celebration
             celebration.style.display = 'block';
             noBtn.style.display = 'none';
-            yesBtn.textContent = '🥳 Super!! 🥳';
+            yesBtn.textContent = '🥳 Awesome! 🥳';
             
             // Create confetti explosion
             createConfetti();
